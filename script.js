@@ -28,8 +28,7 @@ function passwordGenerator() {
     }
 
     // Let user know how many characters they have
-    alert('Your password will be ${clickLength} characters');
-    // CURRENTLY TRYING TO FIX
+    alert(`Your password will be ${clickLength} characters`);
   
   // Get user input on other password specifications
   var clickNumber = confirm("Click OK if you want numbers in your password");
