@@ -2,6 +2,8 @@
 // Choose between 8-128 characters.
 // 128 is a lot of gravy, but we dont ask questions.
 
+document.querySelector("#generate").addEventListener("click", writePassword);
+
 // Here we're declaring arrays with each possible option per user preference
 var number = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
 var special = ["~", "`", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "=", "+", "{", "[", "}", "]", "|", ":", ";", "'", ",", "<", ".", ">", "/", "?"];
@@ -25,41 +27,42 @@ function passwordGenerator() {
     var clickLength = (prompt("Choose a password length between 8 and 128 characters"));
     }
 
-    // Let user know how many characters they'll have
+    // Let user know how many characters they have
     alert('Your password will be ${clickLength} characters');
+    // CURRENTLY TRYING TO FIX
   
   // Get user input on other password specifications
-  var clickNumber = prompt("Click OK if you want numbers in your password");
-  var clickSpecial = prompt("Click OK if you want special characters in your password");
-  var clickLower = prompt("Click OK if you want lower case letters in your password");
-  var clickUpper = prompt("Click OK if you want upper case letters in your password");
+  var clickNumber = confirm("Click OK if you want numbers in your password");
+  var clickSpecial = confirm("Click OK if you want special characters in your password");
+  var clickLower = confirm("Click OK if you want lower case letters in your password");
+  var clickUpper = confirm("Click OK if you want upper case letters in your password");
     
     // Loop in case the user doesn't follow directions
-    while(clickUpper === fase && clickLower === false && clickSpecial === false && clickNumber === false) {
+    while(clickNumber === false && clickSpecial === false && clickLower === false && clickUpper === false) {
       alert("You must at least select one option");
-      var clickNumber = prompt("Click OK if you want numbers in your password");
-      var clickSpecial = prompt("Click OK if you want special characters in your password");
-      var clickLower = prompt("Click OK if you want lower case letters in your password");
-      var clickUpper = prompt("Click OK if you want upper case letters in your password");
+      var clickNumber = confirm("Click OK if you want numbers in your password");
+      var clickSpecial = confirm("Click OK if you want special characters in your password");
+      var clickLower = confirm("Click OK if you want lower case letters in your password");
+      var clickUpper = confirm("Click OK if you want upper case letters in your password");
   }
 
     // Assign action to the password parameters we set
     var confirmCharacters = []
   
-  if (clickNumbers) {
+  if (clickNumber) {
     confirmCharacters = confirmCharacters.concat(number)
   }
 
   if (clickSpecial) {
-    confirmCharacters = confirmCharacters.concat(specialChar)
+    confirmCharacters = confirmCharacters.concat(special)
   }
 
   if (clickLower) {
-    confirmCharacters = confirmCharacters.concat(alphaLower)
+    confirmCharacters = confirmCharacters.concat(lower)
   }
 
   if (clickUpper) {
-    confirmCharacters = confirmCharacters.concat(alphaUpper)
+    confirmCharacters = confirmCharacters.concat(upper)
   }
     
     // Store our info
@@ -77,8 +80,8 @@ function passwordGenerator() {
 }
 
 // This displays the password that we generate
-function generatePassword() {
-  var password = generatePassword();
+function writePassword() {
+  var password = passwordGenerator();
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
