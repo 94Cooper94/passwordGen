@@ -1,4 +1,4 @@
-// Assignment Code
+// This is our call to function
 document.querySelector("#generate").addEventListener("click",passwordGenerator);
 
 // Below we declare arrays with each possible option per user preference
@@ -7,8 +7,11 @@ var special = ["~", "`", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", 
 var lower = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var upper = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 
-// We declare variables for user-inputted length and whether or not the user wants
-// numbers, uppercase, lowercase, or special characters.
+// Here we declare our variables. Length = desired password length.
+// It's an empty string as the user will provide specifications.
+// cNumber, cSpecial, cLower and cUpper confirm with the user
+// whether they want numbers, special characters, lower case letters
+// and upper case letters, in that order.
 var length = "";
 var cNumber;
 var cSpecial;
@@ -29,7 +32,7 @@ function passwordGenerator() {
     // Let user know how many characters they have
     alert(`Your password will be ${length} characters`);
   
-  // Get user input on other password specifications
+  // This is where we provide substance to the user-input section
   var cNumber = confirm("Click OK if you want numbers in your password");
   var cSpecial = confirm("Click OK if you want special characters in your password");
   var cLower = confirm("Click OK if you want lower case letters in your password");
@@ -43,6 +46,9 @@ function passwordGenerator() {
     var cLower = confirm("Click OK if you want lower case letters in your password");
     var cUpper = confirm("Click OK if you want upper case letters in your password");
   }
+
+// This opens an empty array to store the concatinated values that the
+// user elects to include in their password from the previous arrays.
   var confirmCharacters = []
 
   function concat(confirm, arr) {
@@ -51,6 +57,7 @@ function passwordGenerator() {
     }
   }
 
+// This concatinates our similar but different variable outcomes
 concat(cNumber, number);
 concat(cSpecial, special);
 concat(cLower, lower);
@@ -59,10 +66,13 @@ concat(cUpper, upper);
 // Empty string set forth to be filled with our random array
 var rngPassword = ""
 
-// The loop that cycles through each position in the array and applies math functions to randomize each value.
+// The loop that cycles through each position in the array.
+// Once the loop reaches the extent of length, it stops.
 for (var i = 0; i < length; i++) {
   rngPassword = rngPassword + confirmCharacters[Math.floor(Math.random() * confirmCharacters.length)];
 }var passwordText = document.querySelector("#password");
+// Line 72 is the meat and potatoes. It cycles through and randomizes
+// the password content from the previous arrays.
 
 passwordText.value = rngPassword;
 }
