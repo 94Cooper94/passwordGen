@@ -7,20 +7,10 @@ var special = ["~", "`", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", 
 var lower = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var upper = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 
-// Here we declare our variables. Length = desired password length.
-// It's an empty string as the user will provide specifications.
-// cNumber, cSpecial, cLower and cUpper confirm with the user
-// whether they want numbers, special characters, lower case letters
-// and upper case letters, in that order.
-var length = "";
-var cNumber;
-var cSpecial;
-var cLower;
-var cUpper;
-
-// We've established our content in the arrays, we've declared variables
-// Time for user input
+// We've established our content in the arrays. Time for user input
 function passwordGenerator() {
+// Here we declare our first variable. Length = desired password length.
+// It's an empty string as the user will provide specifications.
   var length = (prompt("Choose a password length between 8 and 128 characters"));
 
   // If the user chooses an invalid length, this while loop will activate
@@ -32,7 +22,8 @@ function passwordGenerator() {
     // Let user know how many characters they have
     alert(`Your password will be ${length} characters`);
   
-  // This is where we provide substance to the user-input section
+  // This is where we declare our variables that prompt the user
+  // whether they want numbers, special characters, lower or upper case.
   var cNumber = confirm("Click OK if you want numbers in your password");
   var cSpecial = confirm("Click OK if you want special characters in your password");
   var cLower = confirm("Click OK if you want lower case letters in your password");
