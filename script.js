@@ -16,13 +16,13 @@ function passwordGenerator() {
 // Here we declare our first variable. Length = desired password length.
 // It's an empty string as the user will provide specifications.
 
-length = parseInt((prompt("Choose a password length between 8 and 128 characters")));
+length = parseInt(prompt("Choose a password length between 8 and 128 characters"));
 
   // If the user chooses an invalid length, this while loop will activate
 
   while(length <= 7 || length >= 129 || isNaN(length)){
     alert("Password must be between 8 and 128 characters! Please try again.")
-    var length = parseInt((prompt("Choose a password length between 8 and 128 characters")));
+    var length = parseInt(prompt("Choose a password length between 8 and 128 characters"));
     }
 
     // Let user know how many characters they have
