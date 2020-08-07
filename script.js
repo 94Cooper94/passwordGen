@@ -43,17 +43,17 @@ function passwordGenerator() {
   var confirmCharacters = []
 
   // This concatinates the password-- provides the blueprint
-  function fushion(confirm, arr) {
+  function concat(confirm, arr) {
     if (confirm) {
-      confirmCharacters = confirmCharacters.fushion(arr);
+      confirmCharacters = confirmCharacters.concat(arr);
     }
   }
 
 // This concatinates our similar but different variable outcomes
-fushion(cNumber, number);
-fushion(cSpecial, special);
-fushion(cLower, lower);
-fushion(cUpper, upper);
+concat(cNumber, number);
+concat(cSpecial, special);
+concat(cLower, lower);
+concat(cUpper, upper);
 
 // Empty string set forth to be filled with our random array
 var rngPassword = ""
