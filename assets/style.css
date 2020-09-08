@@ -14,7 +14,7 @@ body,
 
 body {
   font-family: sans-serif;
-  background: url(./media/matrixCodeGIF.gif);
+  background: url(../media/matrixCodeGIF.gif);
 }
 
 .wrapper {
