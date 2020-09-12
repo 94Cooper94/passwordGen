@@ -1,12 +1,10 @@
 # passwordGen
 
-https://94cooper94.github.io/passwordGen/
+## Deployed Site: https://94cooper94.github.io/passwordGen/
 
-Welcome to my random password generator.
+Your ex still have access to your Netflix password months after breaking up? Tired of re-using different iterations of the same password for every account you create? Look no further, as Cooper's passwordGen is here to spice up your life. Sneak-a-peek at the full program up above, but feel free to continue reading to learn about the logical processes involved.
 
-Firstly I would like to acknowledge that I had to do a thorough amount of research in order to make this possible. I collaborated with classmates and referenced plenty of online resources. I grappled with various javascript commands to better understand their functionality and to expose myself to the practicality of javascript.
-
-Initially, the password generator will prompt the user asking how long they would like their password to be. The password must be between 8 and 128 characters-- the while loop on line 17 ensures the user stays within the prompted guidelines.
+Initially, the password generator will prompt the user asking how long they would like their password to be. The password must be between 8 and 128 characters.
 
 ![Initial Prompt](./media/sampleInput.PNG)
 
@@ -14,8 +12,6 @@ After the user has selected an eligible password length, the password generator 
 
 ![One Example of a Prompt](./media/sampleConfirm.PNG)
 
-Lines 35-38 ensure the user is sticking to the guidelines. Lines 46-48 in which we declare the concat(confirm,arr) function concatinates the various arrays we declared earlier on lines 5-8 according to the user's preferences. Lines 63-65 is where the program randomly selects certain characters to generate into the password-- and voila! A random number generated password.
+Enjoy creating rng passwords to your heart's content!
 
 ![Final Product!](./media/sampleOutput.PNG)
-
-Enjoy creating rng passwords to your heart's content!
