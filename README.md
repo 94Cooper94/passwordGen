@@ -15,3 +15,8 @@ After the user has selected an eligible password length, the password generator 
 Enjoy creating rng passwords to your heart's content!
 
 ![Final Product!](./media/sampleOutput.PNG)
+
+## Technologies Used 
+- GitHub & GitHub Pages
+- HTML & CSS
+- JavaScript
